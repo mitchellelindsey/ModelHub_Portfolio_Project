@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModelHub</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <!-- Link to the Swiper for reviews CSS file -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Link to the google icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Link to the social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to Google Fonts for Poppins and Futura -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Link to Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+    <!-- Link to javascript -->
+    <script defer type="module" src="./scripts.js"></script>
+    <script defer type="module" src="./models.js"></script>
+
+</head>
+<body>
+    <!-- Header section with the website title, navigation, and buttons -->
+    <header>
+        <div class="header-container">
+            <h1><a href="index.html">ModelHub</a></h1> <!-- Website Title -->
+            <nav>
+                <ul>
+                    <li><a href="model.html">Models</a></li> <!-- Navigation link for Models -->
+                    <li><a href="influencer.html">Influencers</a></li> <!-- Navigation link for Influencers -->
+                    <li><a href="creator.html">Content Creators</a></li> <!-- Navigation link for Content Creators -->
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a class="btn btn-login">Log In</a> <!-- login Button -->
+                <a class="btn btn-signup">Sign Up</a> <!-- signup Button -->
+            </div>
+        </div>
+        <!-- Thin line after the header -->
+        <hr class="header-line">
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for models, influencers, or content creators">
+            <button id="search-btn">Search</button>
+        </div>
+    </header>
+    
+    <div class="wrapper login-form hidden">
+      <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form action="#">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="email" required>
+            <label>Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input type="password" required>
+            <label>Password</label>
+          </div>
+          <div class="remember-forgot">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <div class="login-register">
+            <p>Don't have an account? <a href="#sign-up" class="signup-link">Sign Up</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="wrapper signup-form hidden">
+      <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+      <div class="form-box signup">
+        <h2>Sign Up</h2>
+        <form action="#">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="person"></ion-icon></span>
+              <input type="text" required>
+              <label>Username</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="email" required>
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" required>
+              <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+              <label><input type="checkbox"> I agree to the terms & conditions</label>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <div class="login-register">
+              <p>Already have an account? <a href="log-in" class="login-link">Log In</a></p>
+            </div>
+          </form>
+        </div>
+    </div>
+
+
+    <header>
+        <h1>Fashion Blog</h1>
+    </header>
+
+    <div class="blog-container">
+        <!-- Fashion News Section -->
+        <section class="blog-section fashion-news">
+            <h2 class="blog-section-title">Fashion News</h2>
+            <div class="blog-content">
+                <p>Stay updated with the latest fashion news from around the world.</p>
+                <!-- Placeholder for an image -->
+                <img src="path-to-your-image.jpg" alt="Fashion News Image" class="blog-image">
+                <!-- Placeholder for a video -->
+                <video controls class="blog-video">
+                    <source src="path-to-your-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- Trending Topics Section -->
+        <section class="blog-section trending-topics">
+            <h2 class="blog-section-title">Trending Topics</h2>
+            <div class="blog-content">
+                <p>Explore what's trending in the fashion world.</p>
+                <!-- Placeholder for an image -->
+                <img src="path-to-your-image.jpg" alt="Trending Topics Image" class="blog-image">
+                <!-- Placeholder for a video -->
+                <video controls class="blog-video">
+                    <source src="path-to-your-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- Job Briefs Section -->
+        <section class="blog-section job-briefs">
+            <h2 class="blog-section-title">Job Briefs</h2>
+            <div class="blog-content">
+                <p>Discover job opportunities in the fashion industry.</p>
+                <!-- Placeholder for an image -->
+                <img src="path-to-your-image.jpg" alt="Job Briefs Image" class="blog-image">
+                <!-- Placeholder for a video -->
+                <video controls class="blog-video">
+                    <source src="path-to-your-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <h2>Get in Touch</h2>
+            <p>Have questions? Want to learn more about what we do? We’d love to hear from you! <a href="contact.html">Contact Us</a> or connect with us on social media.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
