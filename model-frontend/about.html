@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ModelHub</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <!-- Link to Swiper CSS file for reviews -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Link to the Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Link to Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to Google Fonts for Poppins and Futura -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer type="module" src="./scripts.js"></script>
+</head>
+
+<body>
+
+    <header class="about-header">
+        <div class="about-header-container">
+            <h1><a href="index.html">ModelHub</a></h1> <!-- Link back to the home page -->
+            <nav>
+                <ul>
+                    <li><a href="model.html">Models</a></li>
+                    <li><a href="influencer.html">Influencers</a></li>
+                    <li><a href="creator.html">Content Creators</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+    </header>
+
+    <main>
+        <section class="about-us">
+            <h1>About Us</h1>
+
+            <div class="about-us-flex">
+                <div class="about-us-text">
+                    <h2>ModelHub: Connecting Talent with Opportunity</h2>
+                    <p>ModelHub is the leading platform connecting models, influencers, and content creators with top brands and agencies, offering a space where talent meets opportunity. Whether you're looking to showcase your portfolio, find new gigs, or collaborate with industry leaders, ModelHub provides the resources and support to elevate your career to new heights.</p>
+                </div>
+                <div class="about-video">
+                    <video controls>
+                        <source src="images/modelhub.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            
+            <h2>Our Story</h2>
+            <p>Founded to simplify the process of discovering and booking creative talent, ModelHub was born from a deep understanding of the challenges faced by both creatives and brands in the digital age. We recognized the need for a streamlined, user-friendly platform that brings together diverse talents under one roof, making it easier for them to showcase their work and connect with the right opportunities.</p>
+            <p>Since our launch, we have grown rapidly, building a community of passionate creatives who trust ModelHub to be their gateway to the next big opportunity. We are proud to have facilitated thousands of successful collaborations, helping talents turn their dreams into reality.</p>
+            
+            <div class="about-get-started">
+                <a href="#signup" class="btn-get-started">Get Started</a>
+            </div>
+        </section>
+
+        <section class="what-we-offer">
+            <div class="offer-content">
+                <h2>What We Offer</h2>
+                <ul>
+                    <li>
+                        <h4>Portfolio Creation</h4>
+                        <p>Build a stunning online portfolio that highlights your best work and attracts the attention of top brands and agencies.</p>
+                    </li>
+                    <li>
+                        <h4>Job Matching</h4>
+                        <p>Get matched with job opportunities that fit your skills and aspirations, ensuring that you only see the most relevant offers.</p>
+                    </li>
+                    <li>
+                        <h4>Collaboration Tools</h4>
+                        <p>Connect and collaborate with other creatives, whether you're looking to build a team or find new projects.</p>
+                    </li>
+                    <li>
+                        <h4>Industry Insights</h4>
+                        <p>Stay ahead of the curve with the latest trends, tips, and news from the world of fashion and digital media.</p>
+                    </li>
+                </ul>
+                <div class="about-get-started">
+                    <a href="#signup" class="btn-get-started">Sign Me Up</a>
+                </div>
+            </div>
+            <div class="what-we-offer-image">
+                <img src="images/modelhub.jpg" alt="ModelHub Image">
+            </div>
+        </section>
+
+        <section class="community" id="community">
+            <div class="community-container swiper">
+                <h2>Our Community</h2>
+                <p>Our community is at the heart of everything we do. We’re proud to bring together a diverse group of models, influencers, and content creators who support and inspire each other. From up-and-coming talents to established professionals, our members are proof that with the right tools and opportunities, the sky's the limit.</p>
+                <!-- Slider main container -->
+                <div class="slider-wrapper">
+                    <div class="community__card-list swiper-wrapper">
+                        <!-- First Review -->
+                        <div class="community__card swiper-slide">
+                            <img src="images/client1.jpg" alt="Irene Ajayi" class="community__client-image">
+                            <h3 class="community__client-name">Irene Ajayi</h3>
+                            <p class="community__client-profession">Model</p>
+                            <button class="client-message">ModelHub gave me the exposure I needed to land my first big campaign. The platform is a game-changer!</button>
+                        </div>
+
+                        <!-- Second Review -->
+                        <div class="community__card swiper-slide">
+                            <img src="images/client2.jpg" alt="John Doe" class="community__client-image">
+                            <h3 class="community__client-name">John Doe</h3>
+                            <p class="community__client-profession">Influencer</p>
+                            <button class="client-message">I found amazing opportunities through ModelHub that helped me grow my brand and connect with top agencies.</button>
+                        </div>
+
+                        <!-- Third Review -->
+                        <div class="community__card swiper-slide">
+                            <img src="images/client3.jpg" alt="Jane Smith" class="community__client-image">
+                            <h3 class="community__client-name">Jane Smith</h3>
+                            <p class="community__client-profession">Content Creator</p>
+                            <button class="client-message">The user-friendly interface and supportive community make ModelHub my go-to platform for finding new projects.</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination and Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <h2>Get in Touch</h2>
+            <p>Have questions? Want to learn more about what we do? We’d love to hear from you! <a href="contact.html">Contact Us</a> or connect with us on social media.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
