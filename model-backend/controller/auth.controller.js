@@ -41,7 +41,7 @@ const getUser = async function(req, res) {
     
         password = bcrypt.compare(password, currentUser.password)
         
-        const token = jwt.sign({userId: currentUser._id}, process.env.JWT_SECRET, {expiresIn: '1d'})
+        const token = jwt.sign({userId: currentUser._id}, process.env.JWT_SECRET)
 
         res.status(200).json({token})
 
