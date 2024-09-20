@@ -15,7 +15,7 @@ const createUser = async function(req, res) {
         const findExistingUser = await User.findOne({email, username})
         if (findExistingUser) return res.status(400).json({message: 'The user already exists'})
 
-        password = bcrypt.hash(password, 10)
+        password = await bcrypt.hash(password, 10)
         
         const user = await User.create({firstName, lastName, username, email, password})
         const token = jwt.sign({userId: user._id}, process.env.JWT_SECRET, {expiresIn: '1d'})
