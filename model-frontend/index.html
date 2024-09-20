@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModelHub</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <!-- Link to the Swiper for reviews CSS file -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Link to the google icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Link to the social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to Google Fonts for Poppins and Futura -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Link to Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+    <!-- Link to javascript -->
+    <script defer type="module" src="./scripts.js"></script>
+    <script defer type="module" src="./models.js"></script>
+
+</head>
+<body>
+    <!-- Header section with the website title, navigation, and buttons -->
+    <header>
+        <div class="header-container">
+            <h1><a href="about.html">ModelHub</a></h1> <!-- Website Title -->
+            <nav>
+                <ul>
+                    <li><a href="model.html">Models</a></li> <!-- Navigation link for Models -->
+                    <li><a href="influencer.html">Influencers</a></li> <!-- Navigation link for Influencers -->
+                    <li><a href="creator.html">Content Creators</a></li> <!-- Navigation link for Content Creators -->
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a class="btn btn-login">Log In</a> <!-- login Button -->
+                <a class="btn btn-signup">Sign Up</a> <!-- signup Button -->
+            </div>
+        </div>
+        <!-- Thin line after the header -->
+        <hr class="header-line">
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for models, influencers, or content creators">
+            <button id="search-btn">Search</button>
+        </div>
+    </header>
+    
+    <div class="wrapper login-form hidden">
+      <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form action="#">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="email" required>
+            <label>Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input type="password" required>
+            <label>Password</label>
+          </div>
+          <div class="remember-forgot">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <div class="login-register">
+            <p>Don't have an account? <a href="#sign-up" class="signup-link">Sign Up</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="wrapper signup-form hidden">
+      <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+      <div class="form-box signup">
+        <h2>Sign Up</h2>
+        <form action="#">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="person"></ion-icon></span>
+              <input type="text" required>
+              <label>First Name</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="person"></ion-icon></span>
+              <input type="text" required>
+              <label>Last Name</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="person"></ion-icon></span>
+              <input type="text" required>
+              <label>Username</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="email" required>
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" required>
+              <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+              <label><input type="checkbox"> I agree to the terms & conditions</label>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <div class="login-register">
+              <p>Already have an account? <a href="#log-in" class="login-link">Log In</a></p>
+            </div>
+          </form>
+        </div>
+    </div>
+
+
+    <!-- Hero section with sliding images -->
+    <section id="hero">
+        <div class="slider">
+          <div class="slides">
+              <!-- Original Slides -->
+              <div class="slide"><img src="images/model1.jpg" alt="Model 1"></div>
+              <div class="slide"><img src="images/model2.jpg" alt="Model 2"></div>
+              <div class="slide"><img src="images/model3.jpg" alt="Model 3"></div>
+              <div class="slide"><img src="images/model4.jpg" alt="Model 4"></div>
+              <div class="slide"><img src="images/model5.jpg" alt="Model 5"></div>
+              <div class="slide"><img src="images/model6.jpg" alt="Model 6"></div>
+              <div class="slide"><img src="images/model7.jpg" alt="Model 7"></div>
+              <div class="slide"><img src="images/model8.jpg" alt="Model 8"></div>
+              <!-- Clones for seamless looping -->
+              <div class="slide"><img src="images/model1.jpg" alt="Model 1"></div>
+              <div class="slide"><img src="images/model2.jpg" alt="Model 2"></div>
+              <div class="slide"><img src="images/model3.jpg" alt="Model 3"></div>
+          </div>
+      </div>
+      
+
+    </section>
+
+    <!-- Why ModelHub Section -->
+    <section class="why-modelhub">
+        <h2>Why ModelHub is the Ultimate Platform for Creatives</h2>
+        <p>
+            At ModelHub, we bridge the gap between talent and opportunity. Our platform is designed with creatives in mind, offering a seamless experience for models, influencers, and content creators to showcase their portfolios and connect with top clients. We ensure that every creative is presented at their best. Whether you're looking to book or be booked, ModelHub is your go-to destination for making impactful connections in the industry.
+        </p>
+
+        <!-- Get Started button -->
+    <div class="get-started">
+        <button href="#signup" class="btn-get-started">Get Started</button>
+    </div>
+
+    <!-- Image underneath the Get Started button -->
+    <div class="why-modelhub-image">
+        <img src="images/modelhub.jpg" alt="ModelHub Image">
+    </div>
+</section>
+
+
+<section class="how-modelhub-helps">
+  <h2>How ModelHub Can Help You as a Creative</h2>
+
+  <div class="how-modelhub-helps__content">
+      <div class="how-modelhub-helps__text">
+          <h4 class="dropdown-header">
+            Showcase Your Portfolio
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </h4>
+          <div class="dropdown-content">
+              <p>ModelHub allows you to create a stunning online portfolio, displaying your best work to potential clients, brands, and agencies.</p>
+          </div>
+
+          <h4 class="dropdown-header">
+            Connect with Top Clients
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </h4>
+          <div class="dropdown-content">
+              <p>The platform provides opportunities to connect with leading brands, agencies, and clients looking for fresh talent.</p>
+          </div>
+
+          <h4 class="dropdown-header">
+            Personalized Profile
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </h4>
+          <div class="dropdown-content">
+              <p>Customize your profile to reflect your unique style and personality, making it easier for clients to find exactly what they're looking for.</p>
+          </div>
+
+          <h4 class="dropdown-header">
+            Industry Insights and Resources
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </h4>
+          <div class="dropdown-content">
+              <p>Stay updated with the latest trends, tips, and resources that can help you grow and succeed in your creative career.</p>
+          </div>
+
+          <h4 class="dropdown-header">
+            Build Your Network
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </h4>
+          <div class="dropdown-content">
+              <p>ModelHub connects you with other creatives, allowing you to collaborate, learn, and grow together within the community.</p>
+          </div>
+
+          <h4 class="dropdown-header">
+            Enhanced Visibility
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </h4>
+          <div class="dropdown-content">
+              <p>Increase your visibility in the industry by being part of a platform specifically designed to highlight creative talent.</p>
+          </div>
+
+          <h4 class="dropdown-header">
+            Client Reviews and Ratings
+            <span class="material-icons dropdown-icon">expand_more</span>
+          </h4>
+          <div class="dropdown-content">
+              <p>Receive feedback from clients that can help you improve and build credibility within the industry.</p>
+          </div>
+      </div>
+
+      <div class="how-modelhub-helps__image">
+          <img src="images/modelhub3.jpg" alt="ModelHub Image">
+      </div>
+  </div>
+</section>
+
+
+
+<section class="section__container connect-with-us">
+    <div class="connect__image">
+      <img src="images/modelhub2.jpg" alt="ModelHub Image">
+    </div>
+    <div class="connect-with-us__content">
+      <h2 class="section__header">Connect With Us</h2>
+      <p class="section__description">
+        Networking can lead to collaborations, partnerships, and increased exposure within the industry.
+      </p>
+      <ul>
+        <li>
+          <span><i class="ri-checkbox-circle-line"></i></span>
+          A pleasant user experience encourages both creatives and clients to use the platform regularly.
+        </li>
+        <li>
+          <span><i class="ri-checkbox-circle-line"></i></span>
+          Increases accessibility, allowing users to manage their profiles or make bookings anytime, anywhere.
+        </li>
+      </ul>
+      <div class="connect__links">
+        <a href="https://play.google.com/store/apps?hl=en&gl=US" target="_blank">
+          <img src="images/google-play.png" alt="google-play" />
+        </a>
+        <a href="https://www.apple.com/app-store/" target="_blank">
+          <img src="images/app-store.png" alt="app-store" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="client" id="client">
+    <div class="section__container client__container swiper">
+      <h2 class="section__header">Creative Reviews</h2>
+      <p class="section__description">
+        Hear firsthand from creatives about their experience on ModelHub to elevate their brand and find new opportunities in the industry.
+      </p>
+      <!-- Slider main container -->
+      <div class="slider-wrapper">
+        <div class="card-list swiper-wrapper">
+          <!-- First Review -->
+          <div class="card__item swiper-slide">
+            <img src="images/client1.jpg" alt="Irene Ajayi" class="client-image" />
+            <h2 class="client-name">Irene Ajayi</h2>
+            <p class="client-profession">Model</p>
+            <button class="message-button">I love the website</button>
+          </div>
+  
+          <!-- Second Review -->
+          <div class="card__item swiper-slide">
+            <img src="images/client2.jpg" alt="John Doe" class="client-image" />
+            <h2 class="client-name">John Doe</h2>
+            <p class="client-profession">Influencer</p>
+            <button class="message-button">ModelHub helped me find amazing opportunities!</button>
+          </div>
+  
+          <!-- Third Review -->
+          <div class="card__item swiper-slide">
+            <img src="images/client3.jpg" alt="Jane Smith" class="client-image" />
+            <h2 class="client-name">Jane Smith</h2>
+            <p class="client-profession">Content Creator</p>
+            <button class="message-button">The platform is user-friendly and effective.</button>
+          </div>
+
+          <!-- Fourth Review -->
+          <div class="card__item swiper-slide">
+            <img src="images/client3.jpg" alt="Jane Smith" class="client-image" />
+            <h2 class="client-name">Jane Smith</h2>
+            <p class="client-profession">Content Creator</p>
+            <button class="message-button">The platform is user-friendly and effective.</button>
+          </div>
+        </div>
+      </div>
+      <!-- Pagination and Navigation -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-slide-button swiper-button-prev"></div>
+      <div class="swiper-slide-button swiper-button-next"></div>
+    </div>
+  </section>
+
+  <!-- New Section -->
+<section class="community-support">
+  <div class="section__container">
+      <p class="community-text">
+          ...and an entire community to support your journey. We are committed to growing the largest network of creatives. Where your talent is nurtured and your career is elevated. Join us and be a part of something extraordinary.
+      </p>
+      <button class="learn-more-button" onclick="location.href='about.html'">Learn More</button>
+  </div>
+</section>
+  
+  
+<!-- Subscription Plans Section -->
+<section class="subscription-plans">
+  <div class="section__container" id="packages">
+      <h2 class="section__header">Find a Creative Plan That Suits You</h2>
+      <p class="section__description">
+          Subscribe for one year and save 20% off all your subscription fees.
+      </p>
+      <div class="plan-buttons">
+          <button class="plan-button" data-plan="quarterly">QUARTERLY</button>
+          <button class="plan-button" data-plan="biannually">BIANNUALLY</button>
+          <button class="plan-button" data-plan="yearly">YEARLY</button>
+      </div>
+      <div class="plan-details">
+          <div class="plan-content active" id="quarterly">
+              <h3>Quarterly Plan</h3>
+              <p>$75 per quarter</p>
+              <p>Get access to all features, priority support, and more.</p>
+          </div>
+          <div class="plan-content" id="biannually">
+              <h3>Biannual Plan</h3>
+              <p>$140 every 6 months</p>
+              <p>Get all the benefits of the Quarterly Plan plus 10% off on events.</p>
+          </div>
+          <div class="plan-content" id="yearly">
+              <h3>Yearly Plan</h3>
+              <p>$250 per year (Save 20%)</p>
+              <p>Enjoy all features, priority support, and exclusive content.</p>
+          </div>
+          <!-- Get Started Button -->
+          <button class="btn-get-started">Get Started</button>
+      </div>
+  </div>
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="footer__container">
+      <!-- Left Side: Logo, Motto, Socials -->
+      <div class="footer__left">
+        <h1>ModelHub</h1>
+        <p class="footer__motto">Where Creativity Meets Opportunity. A platform where creatives can connect, grow, and thrive. Join our community and elevate your brand with endless possibilities.</p>
+          <div class="footer__socials">
+              <a href="https://www.facebook.com" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.twitter.com" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+      </div>
+
+      <!-- Right Side: Sections and Links -->
+      <div class="footer__right">
+          <div class="footer__section">
+              <h4 class="footer__header">Support</h4>
+              <ul class="footer__links">
+                  <li><a href="about.html" class="footer__link">About ModelHub</a></li>
+                  <li><a href="help.html" class="footer__link">Help & FAQ</a></li>
+                  <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+              </ul>
+          </div>
+          <div class="footer__section">
+              <h4 class="footer__header">Community</h4>
+              <ul class="footer__links">
+                  <li><a href="#search-input" class="footer__link">Search People</a></li>
+                  <li><a href="#packages" class="footer__link">Show Packages</a></li>
+                  <li><a href="#client" class="footer__link">Our Community</a></li>
+              </ul>
+          </div>
+          <div class="footer__section">
+              <h4 class="footer__header">News</h4>
+              <ul class="footer__links">
+                  <li><a href="blog.html" class="footer__link">Blog</a></li>
+                  <li><a href="blog.html" class="footer__link">Trending</a></li>
+                  <li><a href="blog.html" class="footer__link">Job Briefs</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!-- Footer Bar with Copyright -->
+  <div class="footer__bar">
+      <p>&copy; 2024 ModelHub. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+    <!-- Sections for Models, Influencers, and Content Creators -->
+    <section id="models">
+        <h2>Models</h2>
+        <!-- Content for models will go here -->
+    </section>
+
+    <section id="influencers">
+        <h2>Influencers</h2>
+        <!-- Content for influencers will go here -->
+    </section>
+
+    <section id="creators">
+        <h2>Content Creators</h2>
+        <!-- Content for content creators will go here -->
+    </section>
+
+
+    <!-- Link to the external JavaScript file -->
+    <!-- <script src="./scripts.js"></script> -->
+
+    <!-- Link to the Swiper for reviews CSS file -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Link to the login icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
