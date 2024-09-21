@@ -1,5 +1,11 @@
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
+document.addEventListener('DOMContentLoaded', function() {
+    const token = JSON.parse(sessionStorage.getItem('token'))
+    // if (token)
+        // document.querySelector('.header-buttons')?.innerHTML = `<svg fill="#594f2e" width="64px" height="64px" viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg" stroke="#594f2e" stroke-width="0.064"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.128"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="about"> <path d="M16,16A7,7,0,1,0,9,9,7,7,0,0,0,16,16ZM16,4a5,5,0,1,1-5,5A5,5,0,0,1,16,4Z"></path> <path d="M17,18H15A11,11,0,0,0,4,29a1,1,0,0,0,1,1H27a1,1,0,0,0,1-1A11,11,0,0,0,17,18ZM6.06,28A9,9,0,0,1,15,20h2a9,9,0,0,1,8.94,8Z"></path> </g> </g></svg>`
+})
+
 // Adding a basic functionality for the search button
 document.getElementById('search-btn')?.addEventListener('click', function() {
     const query = document.getElementById('search-input').value.trim();
@@ -225,3 +231,121 @@ document.querySelector('.review-form')?.addEventListener('submit', function(even
     // Reset form fields
     this.reset();
 });
+
+const signUp = async function(userData) {
+    try {
+       const res = await fetch('https://modelhub-portfolio-project.onrender.com/api/auth/create', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+       })
+
+       if (!res.ok) throw new Error('An unknown error occured')
+
+       const data = await res.json()
+       if (!data) throw new Error('An unknown error occured')
+
+
+       return {data, bool: true}
+    } catch (error) {
+        return {error, bool: false}
+    }
+}
+
+document.querySelector('.form-signup')?.addEventListener('submit', async function(e) {
+    e.preventDefault()
+
+    const firstName = document.querySelector('.firstname').value
+    const lastName = document.querySelector('.lastname').value
+    const username = document.querySelector('.username').value
+    const email = document.querySelector('.email').value
+    const password = document.querySelector('.password').value
+
+    const userData = {
+        firstName,
+        lastName,
+        username,
+        email,
+        password: String(password)
+    }
+
+    document.querySelector('.btn-submit-signup').textContent = 'Loading....'
+    document.querySelector('.btn-submit-signup').disabled = true
+
+    const {data, bool} = await signUp(userData)
+
+    if (bool == true && data) {
+        sessionStorage.clear() // clear session storage for any existing token value
+        sessionStorage.setItem('token', JSON.stringify(data)) // save token to session storage
+
+        document.querySelector('.signup-form')?.classList.add('hidden')
+        document.querySelector('.btn-signup')?.classList.add('hidden')
+        document.querySelector('.btn-login')?.classList.add('hidden')
+
+        window.location = '/model-frontend/signupform.html'
+    }
+    
+        // document.querySelector('.header-buttons').innerHTML = `<svg fill="#594f2e" width="15px" height="15px" viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg" stroke="#594f2e" stroke-width="0.064"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.128"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="about"> <path d="M16,16A7,7,0,1,0,9,9,7,7,0,0,0,16,16ZM16,4a5,5,0,1,1-5,5A5,5,0,0,1,16,4Z"></path> <path d="M17,18H15A11,11,0,0,0,4,29a1,1,0,0,0,1,1H27a1,1,0,0,0,1-1A11,11,0,0,0,17,18ZM6.06,28A9,9,0,0,1,15,20h2a9,9,0,0,1,8.94,8Z"></path> </g> </g></svg>`
+    })
+
+
+
+    const logIn = async function(userData) {
+        try {
+           const res = await fetch('https://modelhub-portfolio-project.onrender.com/api/auth/getUser', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+           })
+
+           console.log(res)
+    
+           if (!res.ok) throw new Error('An unknown error occured')
+    
+           const data = await res.json()
+           console.log(data)
+           if (!data) throw new Error('An unknown error occured')
+    
+    
+           return {data, bool: true}
+        } catch (error) {
+            return{ error, bool: false}
+        }
+    }
+
+    document.querySelector('.form-login')?.addEventListener('submit', async function(e) {
+        e.preventDefault()
+    
+        const email = document.querySelector('.email').value
+        const password = document.querySelector('.password').value
+    
+        const userData = {
+            email,
+            password: String(password)
+        }
+    
+        document.querySelector('.btn-submit-login').textContent = 'Loading....'
+        document.querySelector('.btn-submit-login').disabled = true
+    
+        const {data, bool, error} = await logIn(userData)
+    
+        if (bool == true && data) {
+            sessionStorage.clear() // clear session storage for any existing token value
+            sessionStorage.setItem('token', JSON.stringify(value)) // save token to session storage
+    
+            document.querySelector('.signup-form')?.classList.add('hidden')
+            document.querySelector('.btn-signup')?.classList.add('hidden')
+            document.querySelector('.btn-login')?.classList.add('hidden')
+
+            document.querySelector('.header-buttons').innerHTML = `<svg fill="#594f2e" width="15px" height="15px" viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg" stroke="#594f2e" stroke-width="0.064"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.128"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="about"> <path d="M16,16A7,7,0,1,0,9,9,7,7,0,0,0,16,16ZM16,4a5,5,0,1,1-5,5A5,5,0,0,1,16,4Z"></path> <path d="M17,18H15A11,11,0,0,0,4,29a1,1,0,0,0,1,1H27a1,1,0,0,0,1-1A11,11,0,0,0,17,18ZM6.06,28A9,9,0,0,1,15,20h2a9,9,0,0,1,8.94,8Z"></path> </g> </g></svg>`
+        } else {
+            console.log(error)
+        }
+        
+        
+
+})
