@@ -25,130 +25,50 @@
     <header class="about-header">
         <div class="about-header-container">
             <h1><a href="index.html">ModelHub</a></h1> <!-- Link back to the home page -->
-            <nav>
-                <ul>
-                    <li><a href="imodel.html">Models</a></li>
-                    <li><a href="influencer.html">Influencers</a></li>
-                    <li><a href="creator.html">Content Creators</a></li>
-                </ul>
-            </nav>
         </div>
         
     </header>
 
     <header>
-        <h1>ModelHub Sign Up</h1>
+        <h1>Sign Up Form</h1>
     </header>
 
     <main>
-        <!-- Step 0: Subscription Plans -->
+        <!-- Subscription Plans -->
         <section class="signup-subscription-plans">
             <h2>Choose Your Subscription Plan</h2>
             <div class="signup-plans">
                 <div class="subscription-plan">
-                    <h3>Basic Plan</h3>
-                    <p>$5/month</p>
+                    <h3>Monthly Plan</h3>
+                    <p><strong>$10/monthly</p></strong>
                     <button>Subscribe</button>
                 </div>
                 <div class="subscription-plan">
-                    <h3>Pro Plan</h3>
-                    <p>$15/month</p>
+                    <h3>Quarterly Plan</h3>
+                    <p><strong>$28.50/quarter</p></strong>
+                    <p>Get access to all features, priority support, and more.</p>
                     <button>Subscribe</button>
                 </div>
                 <div class="subscription-plan">
-                    <h3>Premium Plan</h3>
-                    <p>$25/month</p>
+                    <h3>Biannual Plan</h3>
+                    <p><strong>$54/biannually</p></strong>
+                    <p>Get all the benefits of the Quarterly Plan plus 10% off on events.</p>
+                    <button>Subscribe</button>
+                </div>
+                <div class="subscription-plan">
+                    <h3>Yearly Plan</h3>
+                    <p><strong>$102/yearly</p></strong>
+                    <p>Enjoy all features, priority support, and exclusive content.</p>
                     <button>Subscribe</button>
                 </div>
             </div>
         </section>
 
-        <!-- Step 1: Role Selection -->
-        <section class="role-selection">
-            <h2>Step 1: Select Your Creative Category</h2>
-            <label>
-                <input type="radio" name="role" value="model"> Model
-            </label>
-            <label>
-                <input type="radio" name="role" value="influencer"> Influencer
-            </label>
-            <label>
-                <input type="radio" name="role" value="creator"> Content Creator
-            </label>
-        </section>
-
-        <!-- Step 2: Profile Page Existence -->
-        <section class="profile-existence">
-            <h2>Step 2: Do You Have an existing Profile Page on ModelHub database?</h2>
-            <label>
-                <input type="radio" name="profile_exist" value="yes"> Yes
-            </label>
-            <label>
-                <input type="radio" name="profile_exist" value="no"> No
-            </label>
-        </section>
-
-        <!-- Step 3: Agency Representation -->
-        <section class="agency-representation">
-            <h2>Step 3: Are You Represented by a Modeling Agency?</h2>
-            <label>
-                <input type="radio" name="agency_represented" value="yes"> Yes
-            </label>
-            <label>
-                <input type="radio" name="agency_represented" value="no"> No
-            </label>
-        </section>
-
-        <!-- Step 4: Detailed Information Form -->
-        <section class="detailed-info-form">
-            <h2>Step 4: Fill in Your Details</h2>
-            <form action="submit_form.php" method="POST" enctype="multipart/form-data">
-                <!-- Username -->
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-
-                <!-- Upload Pictures -->
-                <label for="pictures">Upload Pictures:</label>
-                <input type="file" id="pictures" name="pictures[]" accept="image/*" multiple required>
-
-                <!-- Introduction -->
-                <label for="introduction">Introduction:</label>
-                <textarea id="introduction" name="introduction" rows="4" required></textarea>
-
-                <!-- Statistics -->
-                <label for="statistics">Statistics:</label>
-                <textarea id="statistics" name="statistics" rows="3" required></textarea>
-
-                <!-- Contact Information -->
-                <label for="contact_info">Contact Information:</label>
-                <textarea id="contact_info" name="contact_info" rows="3" required></textarea>
-
-                <!-- Social Media Links -->
-                <label for="social_media_links">Social Media Links:</label>
-                <textarea id="social_media_links" name="social_media_links" rows="3" required></textarea>
-
-                <!-- Downloadable Assets -->
-                <label for="assets">Downloadable Assets (PDF):</label>
-                <input type="file" id="assets" name="assets[]" accept=".pdf" multiple>
-
-                <!-- Work Experience -->
-                <label for="work_experience">Work Experience:</label>
-                <textarea id="work_experience" name="work_experience" rows="4" required></textarea>
-
-                <!-- Client Reviews -->
-                <label for="client_reviews">Client Reviews & Ratings:</label>
-                <textarea id="client_reviews" name="client_reviews" rows="4"></textarea>
-
-                <!-- Submit Button -->
-                <button type="submit">Submit</button>
-            </form>
-        </section>
     </main>
 
     <footer>
         <div class="footer-container">
             <h2>Get in Touch</h2>
-            <p>Have questions? Want to learn more about what we do? We’d love to hear from you! <a href="contact.html">Contact Us</a> or connect with us on social media.</p>
             <div class="social-icons">
                 <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>

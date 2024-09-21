@@ -24,65 +24,117 @@
     <header>
         <div class="header-container">
             <h1><a href="index.html">ModelHub</a></h1> <!-- Website Title -->
-            <nav>
-                <ul>
-                    <li><a href="model.html">Models</a></li> <!-- Navigation link for Models -->
-                    <li><a href="influencer.html">Influencers</a></li> <!-- Navigation link for Influencers -->
-                    <li><a href="creator.html">Content Creators</a></li> <!-- Navigation link for Content Creators -->
-                </ul>
-            </nav>
         </div>
     </header>
 
+    <header>
+        <h1>Fill The Form</h1>
+    </header>
+
+
+    <!-- Step 1: Role Selection -->
+<div class="step-container">
+    <section class="role-selection">
+        <h2>Step 1: Select Your Creative Category</h2>
+        <label>
+            <input class="input-role" type="radio" name="role" value="model"> Model
+        </label>
+        <label>
+            <input class="input-role" type="radio" name="role" value="influencer"> Influencer
+        </label>
+        <label>
+            <input class="input-role" type="radio" name="role" value="creator"> Content Creator
+        </label>
+    </section>
+</div>
+
+<!-- Step 2: Profile Page Existence -->
+<div class="step-container">
+    <section class="profile-existence">
+        <h2>Step 2: Do You Have an Existing Profile Page on ModelHub Database?</h2>
+        <label>
+            <input class="input-profile-exist" type="radio" name="profile_exist" value="yes"> Yes
+        </label>
+        <label>
+            <input class="input-profile-exist" type="radio" name="profile_exist" value="no"> No
+        </label>
+    </section>
+</div>
+
+<!-- Step 3: Agency Representation -->
+<div class="step-container">
+    <section class="agency-representation">
+        <h2>Step 3: Are You Represented by a Modeling Agency?</h2>
+        <label>
+            <input class="input-agency-represented" type="radio" name="agency_represented" value="yes"> Yes
+        </label>
+        <label>
+            <input class="input-agency-represented" type="radio" name="agency_represented" value="no"> No
+        </label>
+    </section>
+
     <!-- Model Form Section -->
     <section id="model-form-section">
-        <h2 class="model-name">[Model's Name]</h2>
+        <h2 class="model-name">[Media Upload]</h2>
         <div class="model-photos">
             <div class="model-photo-frame">
-                <input type="file" accept="image/*">
+                <input class="input-media-upload" type="file" accept="image/*">
             </div>
             <div class="model-photo-frame">
-                <input type="file" accept="image/*">
+                <input class="input-media-upload" type="file" accept="image/*">
             </div>
             <div class="model-photo-frame">
-                <input type="file" accept="image/*">
+                <input class="input-media-upload" type="file" accept="image/*">
             </div>
         </div>
         <div class="model-form-section">
-            <h3>Introduction</h3>
-            <textarea placeholder="Introduce yourself..."></textarea>
+            <h3>Profile Overview</h3>
+            <textarea class="textarea-profile-overview" placeholder="Introduce yourself..."></textarea>
         </div>
         <div class="form-section-model">
             <h3>Statistics</h3>
-            <input type="text" placeholder="Height">
-            <input type="text" placeholder="Weight">
-            <input type="text" placeholder="Bust/Chest">
-            <input type="text" placeholder="Waist">
-            <input type="text" placeholder="Hips">
-            <input type="text" placeholder="Shoe Size">
+            <input class="input-statistics" type="text" placeholder="Height">
+            <input class="input-statistics" type="text" placeholder="Weight">
+            <input class="input-statistics" type="text" placeholder="Bust/Chest">
+            <input class="input-statistics" type="text" placeholder="Waist">
+            <input class="input-statistics" type="text" placeholder="Hips">
+            <input class="input-statistics" type="text" placeholder="Shoe Size">
+            <input class="input-statistics" type="text" placeholder="Dress Size">
         </div>
         <div class="form-section-model">
             <h3>Contact Information</h3>
-            <input type="email" placeholder="Email">
-            <input type="tel" placeholder="Phone Number">
+            <input class="input-contact-info" type="email" placeholder="Email Address">
+            <input class="input-contact-info" type="tel" placeholder="Phone Number">
         </div>
         <div class="form-section-model">
             <h3>Social Media Links</h3>
-            <input type="url" placeholder="Instagram">
-            <input type="url" placeholder="Facebook">
-            <input type="url" placeholder="LinkedIn">
+            <input class="input-social-media" type="url" placeholder="Instagram">
+            <input class="input-social-media" type="url" placeholder="Facebook">
+            <input class="input-social-media" type="url" placeholder="LinkedIn">
+            <input class="input-social-media" type="url" placeholder="Tiktok">
         </div>
         <div class="form-section-model">
-            <h3>Downloadable Assets</h3>
-            <input type="file" accept=".pdf">
-            <input type="file" accept=".pdf">
+            <h3>Portfolio</h3>
+            <input class="input-portfolio" type="file" accept=".pdf">
         </div>
         <div class="form-section-model">
-            <h3>Experience</h3>
-            <textarea placeholder="Describe your experience..."></textarea>
-        </div>
-        <div class="form-section-model">
-            <h3>Reviews and Ratings</h3>
-            <textarea placeholder="Clients' reviews..."></textarea>
+            <h3>Work Experience</h3>
+            <textarea class="textarea-work-experience" placeholder="Describe your work experience..."></textarea>
         </div>
     </section>
+
+    <footer>
+        <div class="footer-container">
+            <h2>Get in Touch</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

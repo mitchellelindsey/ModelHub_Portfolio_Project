@@ -156,50 +156,172 @@
     display: none;
 }
 
-/* Other styles for the form layout */
+/* Step Container */
+.step-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    max-width: 900px;
+    margin: 1.5rem auto;
+}
+
+/* Section Headers */
+.step-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #594f2e;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* Radio Buttons */
+.step-container label {
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #fafafa;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+/* Radio input styling */
+.step-container input[type="radio"] {
+    margin-right: 0.5rem;
+    accent-color: #594f2e;
+}
+
+/* Hover effect on radio options */
+.step-container label:hover {
+    background-color: #cacab1;
+    border-color: #ccc;
+}
+
+/* Selected state */
+.step-container input[type="radio"]:checked + label {
+    background-color: #e0e0ff;
+    border-color: #333;
+    font-weight: 600;
+}
+
+/* Button styles */
+button {
+    display: block;
+    background-color: #333;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Additional media queries for responsiveness */
+@media (max-width: 768px) {
+    .step-container {
+        padding: 1rem;
+    }
+
+    .step-container h2 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+#model-form-section {
+    padding: 2rem;
+    background-color: #fff;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .model-name {
-    font-size: 24px;
+    font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    color: #333;
 }
 
 .model-photos {
     display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    margin-bottom: 2rem;
 }
 
 .model-photo-frame {
-    width: 150px;
-    height: 150px;
-    border: 1px solid #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 30%;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
 }
 
-.form-section-model {
-    margin-bottom: 20px;
-}
-
-.form-section-model h3 {
-    margin-bottom: 10px;
-}
-
-/*textarea,
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="url"],
 input[type="file"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-}*/
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
+textarea, input[type="text"], input[type="email"], input[type="tel"], input[type="url"], input[type="file"] {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
 
+/* Form Sections */
+.model-form-section {
+    margin-bottom: 2rem;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+input[type="file"]:hover {
+    background-color: #594f2e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .model-photos {
+        flex-direction: column;
+    }
+
+    .model-photo-frame {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+}
 
 /* INFLUENCER SECTION CONTENT */
 .influencer__section__container {
@@ -396,38 +518,72 @@ input[type="file"] {
 
 
 /* SIGNUP FORM SECTION 
-label {
-    display: block;
-    margin: 15px 0 5px;
-}
-
-input[type="text"], textarea, input[type="file"] {
+/* Subscription Plans Section */
+.signup-subscription-plans {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px;
+    max-width: 1300px;
+    height: fit-content;
+    margin: auto;
+    padding: 20px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    padding: 20px 20px;
+}
+
+.subscription-plan {
+    background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-input[type="radio"] {
-    margin-right: 10px;
+.subscription-plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-button {
-    background-color: #007bff;
+.subscription-plan h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.subscription-plan p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.subscription-plan button {
+    background-color: #594f2e;
     color: #fff;
-    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #0056b3;
+.subscription-plan button:hover {
+    background-color: #555;
 }
-*/
 
-
-
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-plans {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
