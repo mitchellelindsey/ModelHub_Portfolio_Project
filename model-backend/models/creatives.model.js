@@ -36,3 +36,8 @@ const Model = mongoose.Schema({
 }, {
     timestamps: true
 })
+
+
+const CreativeModel = mongoose.model('CreativeModel', Model)
+
+module.exports = CreativeModel

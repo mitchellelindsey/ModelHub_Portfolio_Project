@@ -304,7 +304,7 @@ document.querySelector('.form-signup')?.addEventListener('submit', async functio
 
            console.log(res)
     
-           if (!res.ok) throw new Error('An unknown error occured')
+           //if (!res.ok) throw new Error('An unknown error occured')
     
            const data = await res.json()
            console.log(data)
@@ -320,13 +320,15 @@ document.querySelector('.form-signup')?.addEventListener('submit', async functio
     document.querySelector('.form-login')?.addEventListener('submit', async function(e) {
         e.preventDefault()
     
-        const email = document.querySelector('.email').value
-        const password = document.querySelector('.password').value
+        const userEmail = document.querySelector('.email')
+        const userPassword = document.querySelector('.password')
     
         const userData = {
-            email,
-            password: String(password)
+            email: userEmail.value,
+            password: userPassword.value
         }
+
+        console.log(userData)
     
         document.querySelector('.btn-submit-login').textContent = 'Loading....'
         document.querySelector('.btn-submit-login').disabled = true
