@@ -38,7 +38,7 @@ const getUser = async function(req, res) {
             return res.status(400).json({message: 'One of the values you provided is invalid, it should be a string'})
 
         const currentUser = await User.findOne({email})
-        password = bcrypt.compare(password, currentUser.password)
+        password = await bcrypt.compare(password, currentUser.password)
         
         // const token = jwt.sign({userId: currentUser._id}, process.env.JWT_SECRET)
 
