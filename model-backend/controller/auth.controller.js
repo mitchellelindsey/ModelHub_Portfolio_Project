@@ -42,7 +42,7 @@ const getUser = async function(req, res) {
         
         // const token = jwt.sign({userId: currentUser._id}, process.env.JWT_SECRET)
 
-        res.status(200).json({token})
+        res.status(200).json({currentUser})
 
     } catch (error) {
         res.status(500).json({error: error.message})
