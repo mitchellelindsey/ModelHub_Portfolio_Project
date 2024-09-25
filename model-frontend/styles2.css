@@ -4,10 +4,8 @@
 .model__section__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-items: center;
     padding: 20px 20px;
-    align-items: center;
 }
 
 .model-profile {
@@ -15,7 +13,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
-    width: 300px;
+    width: 400px;
     text-align: center;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -50,11 +48,20 @@
 
 .model-details {
     padding: 15px;
-    color: #333
+    color: #333;
+}
+
+.model-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .model-info p {
-    font-size: 14px;
+    font-size: 16px;
+    width: 90%;
+    text-align: center;
     margin: 10px 0;
 }
 
@@ -213,8 +220,8 @@
 /* Button styles */
 button {
     display: block;
-    background-color: #333;
-    color: #fff;
+    background-color: #fff;
+    color: #333;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     border: none;
@@ -223,10 +230,11 @@ button {
     transition: background-color 0.3s ease;
     margin: 1rem auto;
     text-align: center;
+    margin-top: 50px;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #cacab1;
 }
 
 /* Additional media queries for responsiveness */
@@ -254,7 +262,7 @@ button:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.model-name {
+.model-media {
     font-size: 1.8rem;
     font-weight: bold;
     color: #333;
@@ -275,13 +283,12 @@ button:hover {
     border: 1px solid #ddd;
 }
 
-input[type="file"] {
+.model-photo-frame input[type="file"] {
     width: 100%;
     padding: 0.5rem;
     margin-top: 1rem;
     border: none;
-    background-color: #333;
-    color: #fff;
+    background-color: #fff;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -307,7 +314,7 @@ textarea {
 }
 
 input[type="file"]:hover {
-    background-color: #594f2e;
+    background-color: #cacab1;
 }
 
 /* Responsive Design */
@@ -531,11 +538,16 @@ input[type="file"]:hover {
 }
 
 .signup-plans {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     justify-items: center;
-    padding: 20px 20px;
+    padding: 20px 20px; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .subscription-plan {
@@ -546,6 +558,8 @@ input[type="file"]:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+
+    flex: 1;
 }
 
 .subscription-plan:hover {
@@ -577,7 +591,7 @@ input[type="file"]:hover {
 }
 
 .subscription-plan button:hover {
-    background-color: #555;
+    background-color: #cacab1;
 }
 
 /* Responsive Design */
@@ -586,4 +600,26 @@ input[type="file"]:hover {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+}
+
+
+
+/* PAYMENT FORM SECTION */
+.payment-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.pay-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
 }

@@ -257,19 +257,21 @@ const signUp = async function(userData) {
 document.querySelector('.form-signup')?.addEventListener('submit', async function(e) {
     e.preventDefault()
 
-    const firstName = document.querySelector('.firstname').value
-    const lastName = document.querySelector('.lastname').value
-    const username = document.querySelector('.username').value
-    const email = document.querySelector('.email').value
-    const password = document.querySelector('.password').value
+    const userFirstName = document.querySelector('.firstname')
+    const userLastName = document.querySelector('.lastname')
+    const userName = document.querySelector('.username')
+    const userEmail = document.querySelector('.email.signup-email')
+    const userPassword = document.querySelector('.signup-password')
 
     const userData = {
-        firstName,
-        lastName,
-        username,
-        email,
-        password: String(password)
+        firstName: userFirstName.value,
+        lastName: userLastName.value,
+        username: userName.value,
+        email: userEmail.value,
+        password: userPassword.value
     }
+
+    console.log(userData)
 
     document.querySelector('.btn-submit-signup').textContent = 'Loading....'
     document.querySelector('.btn-submit-signup').disabled = true
@@ -336,8 +338,8 @@ document.querySelector('.form-signup')?.addEventListener('submit', async functio
         const {data, bool, error} = await logIn(userData)
     
         if (bool == true && data) {
-            sessionStorage.clear() // clear session storage for any existing token value
-            sessionStorage.setItem('token', JSON.stringify(value)) // save token to session storage
+            //sessionStorage.clear() // clear session storage for any existing token value
+            //sessionStorage.setItem('token', JSON.stringify(value)) // save token to session storage
     
             document.querySelector('.signup-form')?.classList.add('hidden')
             document.querySelector('.btn-signup')?.classList.add('hidden')
@@ -347,7 +349,5 @@ document.querySelector('.form-signup')?.addEventListener('submit', async functio
         } else {
             console.log(error)
         }
-        
-        
 
 })

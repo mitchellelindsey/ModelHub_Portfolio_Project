@@ -1,5 +1,5 @@
 /* Basic reset to remove default margins and paddings */
-* {
+*, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -218,25 +218,30 @@ header {
 }
 
 
+/*Swiper*/
+
+
+
 
 
 /* Style for the search bar */
-.search-bar {
+.search-creative {
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
-    margin-top: 35px;
+    margin-top: 20px;
 }
 
-.search-bar input[type="text"] {
-    width: 300px;
+.search-creative input[type="text"] {
+    width: 400px;
     padding: 10px;
     border: 1px solid #594f2e;
     border-radius: 5px 0 0 5px;
     font-size: 16px;
+    outline: 0;
 }
 
-.search-bar button {
+.search-creative button {
     padding: 10px 20px;
     border: 1px solid #594f2e;
     background-color: #594f2e; /* Black background color */
@@ -244,9 +249,10 @@ header {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth background color transition */
+    margin: 0;
 }
 
-.search-bar button:hover {
+.search-creative button:hover {
     background-color: #dcdcc4 /* Dark grey background color on hover */
 }
 
@@ -673,7 +679,7 @@ ul li span {
 }
 
 .community-support .learn-more-button:hover {
-    background-color: #f5f5dc; /* Hover effect */
+    background-color: #cacab1; /* Hover effect */
 }
 
 
@@ -1452,4 +1458,23 @@ nav ul li a:hover {
 .faq-item p {
     color: #666;
     font-size: 16px;
+}
+
+.form-signup .firstname,
+.form-signup .lastname,
+.form-signup .username,
+.form-signup .email,
+.form-signup .password {
+    background-color: transparent;
+    box-shadow: none;
+    outline: 0;
+    border: 0;
+}
+
+.form-login .email,
+.form-login .password {
+    background-color: transparent;
+    box-shadow: none;
+    outline: 0;
+    border: 0;
 }
