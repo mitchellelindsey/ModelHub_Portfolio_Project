@@ -10,7 +10,12 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #3f361f; /* Dark grey text color */
     background-color: #ffffff; 
+    font-size: 1rem; /* Instead of a fixed px value */
 }
+
+.container {
+    width: 90vw; /* 90% of viewport width */
+  }
 
 /* Style the header */
 header {
@@ -906,7 +911,7 @@ ul li span {
 }
 
 .about-header-container h1 a:hover {
-    color: #dcdcc4;
+    color: #cacab1;
 }
 
 
@@ -970,7 +975,7 @@ nav ul li a:hover {
 .about-us-text {
     flex: 1;
     margin-right: 100px;
-    text-align: left;
+    text-align: center;
     margin-bottom: 50px;
 }
 

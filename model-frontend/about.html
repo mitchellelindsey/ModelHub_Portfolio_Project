@@ -36,6 +36,77 @@
         
     </header>
 
+
+    <div class="wrapper login-form hidden">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box login">
+          <h2>Login</h2>
+          <form action="#" class="form-login">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input class="email" type="email" required>
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input class="password" type="password" required>
+              <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+              <label><input type="checkbox"> Remember me</label>
+              <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-submit-login">Login</button>
+            <div class="login-register">
+              <p>Don't have an account? <a href="#sign-up" class="signup-link">Sign Up</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+  
+      <div class="wrapper signup-form hidden">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box signup">
+          <h2>Sign Up</h2>
+          <form action="#" class="form-signup">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" required class="firstname">
+                <label>First Name</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" required class="lastname">
+                <label>Last Name</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" required class="username">
+                <label>Username</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" required class="email signup-email">
+                <label>Email</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" required class="password signup-password">
+                <label>Password</label>
+              </div>
+              <div class="remember-forgot">
+                <label><input type="checkbox"> I agree to the terms & conditions</label>
+              </div>
+              <button type="submit" class="btn btn-submit-signup">Sign Up</button>
+              <div class="login-register">
+                <p>Already have an account? <a href="#log-in" class="login-link">Log In</a></p>
+              </div>
+            </form>
+          </div>
+      </div>
+  
+
     <main>
         <section class="about-us">
             <h1>About Us</h1>
@@ -84,7 +155,7 @@
                     </li>
                 </ul>
                 <div class="about-get-started">
-                    <a href="#signup" class="btn-get-started">Sign Me Up</a>
+                    <button href="#signup" class="btn-get-started">Sign Me Up</button>
                 </div>
             </div>
             <div class="what-we-offer-image">

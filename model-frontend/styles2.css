@@ -334,9 +334,8 @@ input[type="file"]:hover {
 .influencer__section__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 40px 20px;
+    justify-items: center;
+    padding: 20px 20px;
 }
 
 .influencer-profile {
@@ -344,7 +343,7 @@ input[type="file"]:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
-    width: 300px;
+    width: 400px;
     text-align: center;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -382,8 +381,17 @@ input[type="file"]:hover {
     color: #333
 }
 
+.influencer-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .influencer-info p {
-    font-size: 14px;
+    font-size: 16px;
+    width: 90%;
+    text-align: center;
     margin: 10px 0;
 }
 
@@ -407,9 +415,8 @@ input[type="file"]:hover {
 .creator__section__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 40px 20px;
+    justify-items: center;
+    padding: 20px 20px;
 }
 
 .creator-profile {
@@ -417,7 +424,7 @@ input[type="file"]:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
-    width: 300px;
+    width: 400px;
     text-align: center;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -458,6 +465,15 @@ input[type="file"]:hover {
 .creator-info p {
     font-size: 14px;
     margin: 10px 0;
+    width: 90%;
+    text-align: center;
+}
+
+.creator-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .creator-info a {
@@ -480,10 +496,11 @@ input[type="file"]:hover {
 .blog-container {
     width: 80%;
     margin: 20px auto;
+    align-items: center;
 }
 
 .blog-section-title {
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin-bottom: 10px;
     color: #333;
 }
@@ -497,7 +514,7 @@ input[type="file"]:hover {
 }
 
 .blog-section h2 {
-    font-size: 1.5em;
+    font-size: 3rem;
     color: #333;
     margin-bottom: 10px;
 }
@@ -509,18 +526,26 @@ input[type="file"]:hover {
 }
 
 .blog-image {
-    width: 100%;
-    height: auto;
+    width: 60%;
+    height: 100%;
     border-radius: 10px;
-    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
 }
 
 .blog-video {
-    width: 100%;
-    height: auto;
+    width: 60%;
+    height: 100%;
     border-radius: 10px;
-    margin-top: 15px;
 }
+
+/* Add space after each paragraph */
+.blog-content p {
+    margin-bottom: 50px; /* Adjust this value to control the spacing */
+    margin-top: 50px;
+}
+
 
 
 
@@ -535,6 +560,7 @@ input[type="file"]:hover {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }
 
 .signup-plans {
