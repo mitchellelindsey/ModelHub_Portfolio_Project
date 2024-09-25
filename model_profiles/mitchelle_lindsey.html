@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - ModelHub</title>
     <!-- Link to the external CSS file -->
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../styles2.css">
+    <link rel="stylesheet" href="../model-frontend/styles2.css">
+    <link rel="stylesheet" href="../model-frontend/styles.css">
     <!-- Link to Swiper CSS file for reviews -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- Link to the Google Material Icons -->
@@ -17,14 +17,14 @@
     <!-- Link to Google Fonts for Poppins and Futura -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script defer type="module" src="./scripts.js"></script>
+    <script defer type="module" src="../model-frontend/scripts.js"></script>
 </head>
 
 <body>
 
     <header class="about-header">
         <div class="about-header-container">
-            <h1><a href="../index.html">ModelHub</a></h1> <!-- Link back to the home page -->
+            <h1><a href="../model-frontend/index.html">ModelHub</a></h1> <!-- Link back to the home page -->
             <nav>
                 <ul>
                     <li><a href="model.html">Models</a></li>
@@ -37,27 +37,24 @@
     </header>
 
     <header>
-        <h1 class="model-name">Mitchelle Lindsey</h1>
+        <h1 class="model-username">Mitchelle Lindsey</h1>
     </header>
     
-    <section class="model-media">
-        <div class="media-frame">
-            <img src="../images/mitchelle_lindsey.jpg" alt="Media 1">
+    <section class="model-user-media">
+        <div class="model-media-frame">
+            <img src="../model-frontend/images/mitchelle_lindsey.jpg" alt="Media 1">
         </div>
-        <div class="media-frame">
-            <img src="../images/model1.jpg" alt="Media 2">
+        <div class="model-media-frame">
+            <img src="../model-frontend/images/model1.jpg" alt="Media 2">
         </div>
-        <div class="media-frame">
-            <video controls>
-                <source src="../images/modelhub.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="model-media-frame">
+            <img src="../model-frontend/images/mitchelle_lindsey.jpg" alt="Media 1">
         </div>
     </section>
 
-    <section class="model-details">
+    <section class="model-userdetails">
         <h2>Profile Overview</h2>
-        <p>Mitchelle Lindsey is an experienced fashion model known for her versatility and professionalism...</p>
+        <p>My name is Mitchelle Lindsey and i'm an experienced fashion model known for my versatility and professionalism. I’m a fashion model with experience in runway shows across Europe and the US. My passion for high fashion has led me to walk in some of the most prestigious fashion weeks globally.</p>
 
         <h2>Statistics</h2>
         <ul>
@@ -70,40 +67,44 @@
         </ul>
 
         <h2>Contact Information</h2>
-        <p><strong>EMAIL:</strong> mitchelle.lindsey@example.com</p>
-        <p><strong>PHONE:</strong> +123 456 7890</p>
-
+        <p><strong>EMAIL:</strong> <a href="mailto:mitchelle.lindsey@example.com">mitchelle.lindsey@example.com</a></p>
+        <p><strong>PHONE:</strong> <a href="tel:+1234567890">+123 456 7890</a></p>
+        
         <h2>Social Media Links</h2>
-        <p>
+        <div class="model-social-icons">
             <a href="https://instagram.com/mitchellelindsey" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://twitter.com/mitchellelindsey" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-        </p>
-
-        <h2>Downloadable Assets</h2>
-        <ul>
-            <li><a href="files/mitchelle_portfolio.pdf" download>Download Portfolio (PDF)</a></li>
-            <li><a href="files/mitchelle_rate_card.pdf" download>Download Rate Card (PDF)</a></li>
-        </ul>
-
-        <h2>Work Experience</h2>
-        <p>Mitchelle has worked with renowned brands such as XYZ Fashion, ABC Beauty, and participated in top fashion shows...</p>
-
-        <h2>Client Reviews & Ratings</h2>
-        <div class="reviews">
-            <p><strong>Rachel Martin:</strong> "Mitchelle was absolutely fantastic to work with. Professional and punctual!" ★★★★★</p>
-            <p><strong>Ken William:</strong> "A true star in front of the camera. Highly recommended!" ★★★★☆</p>
-            <!-- Add more reviews as needed -->
+            <a href="https://tiktok.com/mitchellelindsey" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://linkedin.com/mitchellelindsey" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <form class="review-form">
-            <label for="client-name">Your Name:</label>
-            <input type="text" id="client-name" name="client-name" required>
+        
+        <h2>Downloadable Assets</h2>
+        <ul class="downloadable-assets">
+            <li><a href="files/mitchelle_portfolio.pdf" download>Download Portfolio (PDF)</a></li>
+        </ul>
+        
+        <h2>Work Experience</h2>
+        <p>I've worked with renowned brands such as XYZ Fashion, ABC Beauty, and I’ve walked in Paris, New York, and Milan Fashion Weeks, and I’ve been fortunate enough to be featured on the covers of Vogue and Harper’s Bazaar.</p>
+        
+        <h2>Client Reviews & Ratings</h2>
+        <div class="model-reviews">
+            <div class="review">
+                <p><strong>Rachel Martin:</strong> "Mitchelle was absolutely fantastic to work with. Professional and punctual!" <span class="stars">★★★★★</span></p>
+            </div>
+            <div class="review">
+                <p><strong>Ken William:</strong> "A true star in front of the camera. Highly recommended!" <span class="stars">★★★★☆</span></p>
+            </div>
+        </div>
 
-            <label for="client-review">Your Review:</label>
-            <textarea id="client-review" name="client-review" required></textarea>
+        <form class="model-review-form">
+            <label for="model-client-name">Your Name:</label>
+            <input class="model-client-input" type="text" id="client-name" name="client-name" required>
 
-            <label for="client-rating">Your Rating:</label>
-            <select id="client-rating" name="client-rating" required>
+            <label for="client-review-model">Your Review:</label>
+            <textarea id="model-client-review" name="model-client-review" required></textarea>
+
+            <label for="model-client-rating">Your Rating:</label>
+            <select id="model-client-rating" name="model-client-rating" required>
                 <option value="5">★★★★★</option>
                 <option value="4">★★★★☆</option>
                 <option value="3">★★★☆☆</option>
@@ -111,7 +112,7 @@
                 <option value="1">★☆☆☆☆</option>
             </select>
 
-            <button type="submit">Submit Review</button>
+            <button class="submit-button" type="submit">Submit Review</button>
         </form>
     </section>
 

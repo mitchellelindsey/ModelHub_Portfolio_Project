@@ -351,3 +351,49 @@ document.querySelector('.form-signup')?.addEventListener('submit', async functio
         }
 
 })
+
+
+
+// Get elements for newsletter
+// Get elements
+const subscribeBtn = document.getElementById('subscribeBtn');
+const emailInput = document.getElementById('emailInput');
+const modal = document.getElementById('myModal');
+const closeModal = document.querySelector('.close');
+
+// Function to show modal
+function showModal() {
+    const emailValue = emailInput.value.trim();
+    if (emailValue !== "" && validateEmail(emailValue)) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
+    } else {
+        alert("Please enter a valid email address.");
+    }
+}
+
+// Function to close modal
+function closeModalFunc() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling after modal is closed
+}
+
+// Function to validate email format
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Event listeners
+subscribeBtn.addEventListener('click', showModal);
+closeModal.addEventListener('click', closeModalFunc);
+
+// Close modal if user clicks outside the modal content
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling when closing modal by clicking outside
+    }
+};
+
+
