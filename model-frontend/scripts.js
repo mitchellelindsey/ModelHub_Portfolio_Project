@@ -116,38 +116,8 @@ const swiper1 = new Swiper('.slider-wrapper', {
 });
 
 
-// section to the about us-->
-//document.addEventListener('DOMContentLoaded', function () {
-    //const swiper = new Swiper('.swiper', {
-        //slidesPerView: 1,
-        //spaceBetween: 30,
-        //loop: true,
-        //pagination: {
-            //el: '.swiper-pagination',
-            //clickable: true,
-        //},
-        //navigation: {
-            //nextEl: '.swiper-button-next',
-            //prevEl: '.swiper-button-prev',
-        //},
-    //});
-//});
-
-// section to the login and signup-->
 
 
-// Optional: JavaScript for model form and handling login checks and other functionalities
-//document.addEventListener('DOMContentLoaded', function () {
-    //const isLoggedIn = checkLoginStatus(); // Replace with actual login check logic
-    //if (!isLoggedIn) {
-        //window.location.href = 'login.html'; // Redirect to login page if not logged in
-    //}
-//});
-
-//function checkLoginStatus() {
-    // Replace this with actual logic to check if the user is logged in
-    //return false; // Assume user is not logged in for this example
-//}
 
 // Optional: JavaScript for model section
 document.addEventListener('DOMContentLoaded', () => {
@@ -345,12 +315,84 @@ document.querySelector('.form-signup')?.addEventListener('submit', async functio
             document.querySelector('.btn-signup')?.classList.add('hidden')
             document.querySelector('.btn-login')?.classList.add('hidden')
 
-            document.querySelector('.header-buttons').innerHTML = `<svg fill="#594f2e" width="15px" height="15px" viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg" stroke="#594f2e" stroke-width="0.064"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.128"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="about"> <path d="M16,16A7,7,0,1,0,9,9,7,7,0,0,0,16,16ZM16,4a5,5,0,1,1-5,5A5,5,0,0,1,16,4Z"></path> <path d="M17,18H15A11,11,0,0,0,4,29a1,1,0,0,0,1,1H27a1,1,0,0,0,1-1A11,11,0,0,0,17,18ZM6.06,28A9,9,0,0,1,15,20h2a9,9,0,0,1,8.94,8Z"></path> </g> </g></svg>`
+            document.querySelector('.login-form').classList.add('hidden')
+
+            document.querySelector('.header-buttons').innerHTML = `<a href="/model_profiles/mitchelle_lindsey.html">
+            <svg fill="#594f2e" width="30px" height="30px" viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg" stroke="#594f2e" stroke-width="0.064"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.128"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="about"> <path d="M16,16A7,7,0,1,0,9,9,7,7,0,0,0,16,16ZM16,4a5,5,0,1,1-5,5A5,5,0,0,1,16,4Z"></path> <path d="M17,18H15A11,11,0,0,0,4,29a1,1,0,0,0,1,1H27a1,1,0,0,0,1-1A11,11,0,0,0,17,18ZM6.06,28A9,9,0,0,1,15,20h2a9,9,0,0,1,8.94,8Z"></path> </g> </g></svg></a>`
         } else {
             console.log(error)
         }
 
 })
+
+
+document.querySelector(".monthly-subscribe")?.addEventListener("click", async function () {
+    console.log("Loading");
+
+    try {
+      // get user profile details
+      const token = JSON.parse(sessionStorage.getItem("token")).token;
+      if (!token) return;
+      const res = await fetch(
+        `https://modelhub-portfolio-project.onrender.com/api/auth/userProfile`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const { user } = await res.json();
+
+      console.log(user.email, user._id);
+
+      // make payment
+      if (user) {
+        console.log(user);
+        const popup = new PaystackPop();
+        popup.newTransaction({
+          key: "pk_test_483fc950312e6a0d3eb5decb27b48f4b37615522",
+          email: user.email,
+          amount: 16500 * 100,
+          onSuccess: (transaction) => {
+            console.log(transaction);
+
+            fetch(`https://modelhub-portfolio-project.onrender.com/api/transact/verify`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                reference: transaction.reference,
+              }),
+            })
+              .then((response) => response.json())
+              .then((verificationData) => {
+                if (verificationData.status)
+                  window.location = "/model-frontend/modelform.html";
+                // Handle verification data
+              })
+              .catch((error) => {
+                console.error("Verification Error:", error);
+              });
+          },
+          onload: (response) => {
+            console.log(`onload: ${response}`);
+          },
+          oncancel: () => {
+            console.log("Cancelled");
+          },
+          onerror: (error) => {
+            console.log(`Error: ${error.message}`);
+          },
+        });
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  });
 
 
 
@@ -385,8 +427,8 @@ function validateEmail(email) {
 }
 
 // Event listeners
-subscribeBtn.addEventListener('click', showModal);
-closeModal.addEventListener('click', closeModalFunc);
+subscribeBtn?.addEventListener('click', showModal);
+closeModal?.addEventListener('click', closeModalFunc);
 
 // Close modal if user clicks outside the modal content
 window.onclick = function(event) {

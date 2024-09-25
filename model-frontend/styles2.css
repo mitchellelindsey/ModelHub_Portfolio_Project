@@ -603,6 +603,7 @@ input[type="file"]:hover {
 }
 
 .blog-section {
+    text-align: center;
     background: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -748,16 +749,16 @@ input[type="file"]:hover {
 }
 
 .signup-plans {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-    padding: 20px 20px; */
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .signup-plans {
+        flex-direction: column;
+    }
 }
 
 .subscription-plan {

@@ -5,6 +5,14 @@ const Model = mongoose.Schema({
         type: String,
         required: true
     },
+    creativeCategory: {
+        type: String,
+        required: true
+    },
+    reprensentedByAgency: {
+        type: Boolean,
+        required: true
+    },
     profileOverview: {
         type: String,
         required: true

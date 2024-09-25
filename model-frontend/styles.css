@@ -61,6 +61,16 @@ header {
     color: #dcdcc4; /* White text color on hover */
 }
 
+@media only screen and (max-width: 600px) {
+    .header-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+}
+
 /* Style for the thin line below the header */
 .header-line {
     border: none;
@@ -292,6 +302,12 @@ nav ul li a:hover {
     color: #dcdcc4; /* Beige text color on hover */
 }
 
+@media only screen and (max-width: 600px) {
+    nav ul {
+        display: none !important;
+    }
+}
+
 /* Style the hero section with sliding images */
 #hero {
     margin: 20px 0;
@@ -433,6 +449,22 @@ section h2 {
     align-items: flex-start; /* Align items to the top */
 }
 
+@media only screen and (max-width: 600px) {
+    .how-modelhub-helps__content {
+        flex-direction: column;
+        padding: 10px !important;
+    }
+
+    .how-modelhub-helps__text {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .how-modelhub-helps__image {
+        max-width: 100% !important;
+    }
+}
+
 .dropdown-header {
     cursor: pointer; /* Make the header clickable */
     margin-top: 30px;
@@ -495,6 +527,12 @@ section h2 {
     background-color: #f5f5dc;
     margin-top: 0px;
     margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .section__container.connect-with-us {
+        flex-direction: column;
+    }
 }
 
 /* Styling for the image */
