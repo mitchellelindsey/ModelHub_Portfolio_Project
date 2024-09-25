@@ -367,11 +367,9 @@ document.querySelector(".monthly-subscribe")?.addEventListener("click", async fu
               body: JSON.stringify({
                 reference: transaction.reference,
               }),
-            })
-              .then((response) => response.json())
-              .then((verificationData) => {
-                if (verificationData.status)
-                  window.location = "/model-frontend/modelform.html";
+            }).then((response) => response.json()).then((verificationData) => {
+                if (verificationData.status) 
+                    window.location = '/model-frontend/modelform.html';
                 // Handle verification data
               })
               .catch((error) => {
