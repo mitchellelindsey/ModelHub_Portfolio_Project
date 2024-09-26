@@ -452,7 +452,7 @@ document.querySelector(".monthly-subscribe")?.addEventListener("click", async fu
           if (verificationData.status) {
             console.log("Transaction verified successfully");
             // Redirect to the desired page
-            window.location.href = "model-frontend/modelform.html";
+            window.location.href = "/model-frontend/modelform.html";
           } else {
             console.error("Transaction verification failed", verificationData);
           }
