@@ -427,6 +427,23 @@ input[type="file"]:hover {
 
 }
 
+.submit-form {
+    background-color: #594f2e; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 12px 20px; /* Add some padding */
+    text-align: center; /* Center the text */
+    font-size: 16px; /* Set font size */
+    border-radius: 5px; /* Round the corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+  }
+  
+  .submit-form:hover {
+    background-color: #cacab1; /* Darker green on hover */
+  }
+  
+
 /* INFLUENCER SECTION CONTENT */
 .influencer__section__container {
     display: grid;
