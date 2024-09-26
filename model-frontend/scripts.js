@@ -256,7 +256,7 @@ document.querySelector('.form-signup')?.addEventListener('submit', async functio
         document.querySelector('.btn-signup')?.classList.add('hidden')
         document.querySelector('.btn-login')?.classList.add('hidden')
 
-        window.location = '/model-frontend/signupform.html'
+        window.location = '/signupform.html'
     }
     
         // document.querySelector('.header-buttons').innerHTML = `<svg fill="#594f2e" width="15px" height="15px" viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg" stroke="#594f2e" stroke-width="0.064"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.128"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="about"> <path d="M16,16A7,7,0,1,0,9,9,7,7,0,0,0,16,16ZM16,4a5,5,0,1,1-5,5A5,5,0,0,1,16,4Z"></path> <path d="M17,18H15A11,11,0,0,0,4,29a1,1,0,0,0,1,1H27a1,1,0,0,0,1-1A11,11,0,0,0,17,18ZM6.06,28A9,9,0,0,1,15,20h2a9,9,0,0,1,8.94,8Z"></path> </g> </g></svg>`
@@ -369,7 +369,7 @@ document.querySelector(".monthly-subscribe")?.addEventListener("click", async fu
               }),
             }).then((response) => response.json()).then((verificationData) => {
                 if (verificationData.status) 
-                    window.location = '/model-frontend/modelform.html';
+                    window.location = '/modelform.html';
                 // Handle verification data
               })
               .catch((error) => {
@@ -452,7 +452,11 @@ document.querySelector(".monthly-subscribe")?.addEventListener("click", async fu
           if (verificationData.status) {
             console.log("Transaction verified successfully");
             // Redirect to the desired page
+<<<<<<< HEAD
             window.location.href = "/model-frontend/modelform.html";
+=======
+            window.location.href = "modelform.html";
+>>>>>>> 7c987a19e79a490480ad70e407249f979af96257
           } else {
             console.error("Transaction verification failed", verificationData);
           }
