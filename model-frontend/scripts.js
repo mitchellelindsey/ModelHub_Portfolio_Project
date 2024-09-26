@@ -325,7 +325,7 @@ document.querySelector('.form-signup')?.addEventListener('submit', async functio
 
 })
 
-
+/*
 document.querySelector(".monthly-subscribe")?.addEventListener("click", async function () {
     console.log("Loading");
 
@@ -390,8 +390,90 @@ document.querySelector(".monthly-subscribe")?.addEventListener("click", async fu
     } catch (error) {
       console.log(error.message);
     }
-  });
+  });*/
 
+
+document.querySelector(".monthly-subscribe")?.addEventListener("click", async function () {
+  console.log("Loading");
+
+  try {
+    // get user profile details
+    const token = JSON.parse(sessionStorage.getItem("token"))?.token;
+    if (!token) {
+      console.log("Token not found");
+      return;
+    }
+
+    const res = await fetch(
+      `https://modelhub-portfolio-project.onrender.com/api/auth/userProfile`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const { user } = await res.json();
+
+    if (!user) {
+      console.log("User not found");
+      return;
+    }
+
+    console.log(user.email, user._id);
+
+    // make payment
+    const popup = new PaystackPop();
+    popup.newTransaction({
+      key: "pk_test_483fc950312e6a0d3eb5decb27b48f4b37615522",
+      email: user.email,
+      amount: 16500 * 100,
+      onSuccess: async (transaction) => {
+        console.log(transaction);
+
+        try {
+          const verificationRes = await fetch(
+            `https://modelhub-portfolio-project.onrender.com/api/transact/verify`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                reference: transaction.reference,
+              }),
+            }
+          );
+
+          const verificationData = await verificationRes.json();
+
+          if (verificationData.status) {
+            console.log("Transaction verified successfully");
+            // Redirect to the desired page
+            window.location.href = "model-frontend/modelform.html";
+          } else {
+            console.error("Transaction verification failed", verificationData);
+          }
+        } catch (error) {
+          console.error("Verification Error:", error);
+        }
+      },
+      onload: (response) => {
+        console.log(`onload: ${response}`);
+      },
+      oncancel: () => {
+        console.log("Payment Cancelled");
+      },
+      onerror: (error) => {
+        console.log(`Error: ${error.message}`);
+      },
+    });
+  } catch (error) {
+    console.log("Error occurred:", error.message);
+  }
+});  
 
 
 // Get elements for newsletter
